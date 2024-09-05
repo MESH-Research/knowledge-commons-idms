@@ -1,0 +1,19 @@
+{
+    "name": "mesh-research/commons-idms-simplesamlphp",
+    "description": "Simplesamlphp service for Commons IDMS stack",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Mike Thicke",
+            "email": "thickemi@msu.edu"
+        }
+    ],
+    "require": {
+        "simplesamlphp/simplesamlphp": "^2.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "simplesamlphp/composer-module-installer": true
+        }
+    }
+}

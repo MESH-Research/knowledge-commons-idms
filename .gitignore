@@ -158,3 +158,43 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+# PHP
+*.php~
+*.swp
+.php_cs.cache
+
+# Composer
+/vendor/
+composer.phar
+composer.lock
+
+# PHPUnit
+.phpunit.result.cache
+
+# PHP CodeSniffer
+.php_cs.cache
+
+# PHP Storm
+.idea/
+
+# Laravel (if applicable)
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+
+# Symfony (if applicable)
+/var/
+/bin/*
+!/bin/console
+!/bin/symfony_requirements
+vendor/
+/web/bundles/
+
