@@ -1,0 +1,14 @@
+#!/bin/bash
+
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+SUBMODULE_PATH="comanage"
+
+if [ "$BRANCH" = "main" ]; then
+    cd $SUBMODULE_PATH
+    git checkout develop
+    cd ..
+elif [ "$BRANCH" = "production" ]; then
+    cd $SUBMODULE_PATH
+    git checkout production
+    cd ..
+fi
