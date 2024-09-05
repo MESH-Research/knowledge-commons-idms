@@ -1,0 +1,3 @@
+[submodule "comanage"]
+	path = comanage
+	url = https://github.com/MESH-Research/comanage-registry.git
