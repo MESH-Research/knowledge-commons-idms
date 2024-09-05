@@ -198,3 +198,6 @@ yarn-error.log
 vendor/
 /web/bundles/
 
+# Certificates and keys
+*.crt
+*.key
