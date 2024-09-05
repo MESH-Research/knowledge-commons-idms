@@ -1,0 +1,76 @@
+attributes:
+  displayname:
+    saml:
+      - displayName
+
+  edupersontargetedid:
+    saml:
+      - eduPersonTargetedID
+
+  givenname:
+    saml:
+      - givenName
+
+  ismemberof:
+    saml:
+      - isMemberOf
+
+  mail:
+    saml:
+      - mail
+
+  commonname:
+    saml:
+      - cn
+
+  surname:
+    saml:
+      - sn
+
+  employeenumber:
+    saml:
+      - employeeNumber
+
+  eppn:
+    saml:
+      - eduPersonPrincipalName
+
+  epuid:
+    saml:
+      - eduPersonUniqueId
+
+  uid:
+    saml:
+      - uid
+
+  idpdisplayname:
+    saml:
+      - idpDisplayName
+
+  idporgdisplayname:
+    saml:
+      - idpOrgDisplayName
+
+  idporgname:
+    saml:
+      - idpOrgName
+
+  idpentityid:
+    saml:
+      - idpEntityId
+
+  title:
+    saml:
+      - title
+  
+  organization:
+    saml:
+      - o
+  
+  edupersonorcid:
+    saml:
+      - eduPersonOrcid
+
+  vopersonapplicationuidmlaid:
+    saml:
+      - voPersonApplicationUID_MLA

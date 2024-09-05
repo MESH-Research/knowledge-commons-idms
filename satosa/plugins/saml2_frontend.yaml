@@ -1,0 +1,78 @@
+module:
+  satosa.frontends.saml2.SAMLUnsolicitedFrontend
+  #satosa.frontends.saml2.SAMLFrontend
+
+name:
+  Saml2IDP
+
+config:
+  idp_config:
+    organization:
+      display_name:
+        Humanities Commons
+      name:
+        Humanities Commons
+      url:
+        http://hcommons.org
+    contact_person:
+    - contact_type: technical
+      email_address: admin@hcommons.org
+      given_name: HC Admin
+    key_file: /opt/satosa/frontend.key
+    cert_file: /opt/satosa/frontend.crt
+    metadata:
+      local:
+        - /opt/satosa/dev-metadata.xml
+      mdq:
+        - url: http://mdq.incommon.org
+          cert: inc-md-cert-mdq.pem
+
+    entityid: https://proxy.hcommons-dev.org/idp
+
+    attribute_map_dir: attributemaps
+
+    service:
+      idp:
+        endpoints:
+          single_sign_on_service:
+            []
+        name: Proxy IdP
+        name_id_format:
+          - urn:oasis:names:tc:SAML:2.0:nameid-format:persistent
+          - urn:oasis:names:tc:SAML:2.0:nameid-format:transient
+        sign_assertion: true
+        policy:
+          default:
+            attribute_restrictions:
+              null
+            fail_on_missing_requested:
+              false
+            lifetime:
+              minutes: 15
+            name_form:
+              urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified
+            sign_response: false
+            sign_assertion: true
+
+  acr_mapping:
+    "": urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified
+
+  unsolicited:
+    endpoint: unsolicited
+    discovery_service_url_whitelist:
+      - https://registry.hcommons-dev.org/discovery_service_wordpress/index.php
+      - https://registry.hcommons-dev.org/discovery_service_enrollment/index.php
+      - https://registry.hcommons-dev.org/discovery_service_registry/index.php
+      - https://registry.hcommons-dev.org/discovery_service_registry_only/index.php
+    discovery_service_policy_whitelist:
+      - urn:mla.org:SAML:profile:SSO:idp-discovery-protocol:commons_enrollment
+
+  endpoints:
+    single_sign_on_service:
+      'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST':
+        sso/post
+      'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect':
+        sso/redirect
+
+  common_domain_cookie:
+    domain: .hcommons-dev.org

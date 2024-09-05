@@ -1,0 +1,15 @@
+module: hcdiscovery.HumanitiesCommonsDiscoverySelector
+name: HumanitiesCommonsDiscoverySelector
+config:
+    sp_to_ds_map:
+        # Format is <SP SAML entityID>:<Discovery Service base URL>
+        #https://hcommons-dev.org/shibboleth: https://registry.hcommons-dev.org/discovery_service_wordpress/index.php
+        https://hcommons-dev.org/shibboleth: https://registry.hcommons-dev.org/discovery_service/index.php
+        https://msucommons-dev.org/shibboleth: https://registry.hcommons-dev.org/discovery_service_wordpress/index.php
+        #https://registry.hcommons-dev.org/shibboleth: https://registry.hcommons-dev.org/discovery_service_registry/index.php
+        https://registry.hcommons-dev.org/shibboleth: https://registry.hcommons-dev.org/discovery_service/registry.php
+        https://hcommons-staging.org/sp: https://registry.hcommons-dev.org/discovery_service_wordpress/index.php
+        https://hcommons-2.dev/sp: https://registry.hcommons-dev.org/discovery_service_wordpress/index.php
+        https://hcommons-3.dev/sp: https://registry.hcommons-dev.org/discovery_service_wordpress/index.php
+        https://commons-wordpress.lndo.site/simplesaml: https://registry.hcommons-dev.org/discovery_service_wordpress/index.php
+

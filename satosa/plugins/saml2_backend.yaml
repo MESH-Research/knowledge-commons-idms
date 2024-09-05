@@ -1,0 +1,59 @@
+module:
+  satosa.backends.saml2.SAMLBackend
+
+name:
+  Saml2
+
+config:
+  sp_config:
+    accepted_time_diff: 300
+    key_file:
+      /opt/satosa/backend.key
+    cert_file:
+      /opt/satosa/backend.crt
+    organization:
+      display_name:
+        Humanities Commons
+      name:
+        Humanities Commons
+      url:
+        http://hcommons.org
+    contact_person:
+    - contact_type: technical
+      email_address: admin@hcommons.org
+      given_name: HC Admin
+    metadata:
+      local:
+        - /opt/satosa/dev-metadata.xml
+      mdq:
+        - url: http://mdq.incommon.org
+          cert: inc-md-cert-mdq.pem
+
+    entityid:
+      https://proxy.hcommons-dev.org/sp
+
+    attribute_map_dir: attributemaps
+
+    service:
+      sp:
+        want_response_signed: false
+        want_assertions_signed: false
+        want_assertions_or_response_signed: true
+        allow_unsolicited: true
+        endpoints:
+          assertion_consumer_service:
+          - [<base_url>/<name>/acs/post,
+             'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST']
+          - [<base_url>/<name>/acs/redirect,
+             'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect']
+          discovery_response:
+          - [<base_url>/<name>/disco,
+             'urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol']
+        name_id_format:
+          'None'
+        name_id_format_allow_create: 
+          true
+          
+  # disco_srv must be defined if there is more than one IdP in the metadata specified above
+  disco_srv:
+    https://registry.hcommons-dev.org/discovery_service_wordpress/index.php

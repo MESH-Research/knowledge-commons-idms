@@ -1,0 +1,52 @@
+module: satosa.micro_services.ldap_attribute_store.LdapAttributeStore
+name: LdapAttributeStore2
+config:
+  "":
+    ldap_url: ldap://registry.hcommons-dev.org
+    bind_dn: uid=comanage,ou=system,o=HC,dc=commons,dc=mla,dc=org
+    bind_password: ESe4LNZoN7Y3T7Qypwwk
+    auto_bind: AUTO_BIND_NO_TLS
+    search_base: ou=people2,o=HC,dc=commons,dc=mla,dc=org
+    # Until Grouper is deprecated and the ou=people2 branch becomes the primary
+    # branch for CoPerson records only retrieve the isMemberOf attribute.
+    query_return_attributes:
+      - isMemberOf
+      - sn
+      - givenName
+      - mail
+      - employeeNumber
+      - title
+      - o
+      - eduPersonOrcid
+      - eduPersonPrincipalName
+      - uid
+      - cn
+      - voPersonApplicationUID;app-mlaid
+    ldap_to_internal_map:
+      isMemberOf: ismemberof2
+      sn: surname
+      givenName: givenname
+      mail: mail
+      employeeNumber: employeenumber
+      title: title
+      o: organization
+      eduPersonOrcid: edupersonorcid
+      eduPersonPrincipalName: eppn
+      uid: uid
+      cn: commonname
+      voPersonApplicationUID;app-mlaid: vopersonapplicationuidmlaid
+    ordered_identifier_candidates:
+      - attribute_names: [uid]
+    ldap_identifier_attribute: uid
+    user_id_from_attrs: 
+      - employeeNumber
+    # After Grouper is deprecated and the ou=people2 branch becomes the main
+    # branch for CoPerson records revert to clearing input attributes.
+    clear_input_attributes: yes
+    #clear_input_attributes: no
+    # After Grouper is deprecated and the ou=people2 branch becomes the main
+    # branch for CoPerson records revert to redirecting on an empty search result.
+    on_ldap_search_result_empty: https://hcommons-dev.org/not-enrolled/
+
+  https://registry.hcommons-dev.org/shibboleth:
+    ignore: true

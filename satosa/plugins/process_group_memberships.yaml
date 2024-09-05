@@ -1,0 +1,3 @@
+module: process_group_memberships.ProcessGroupMemberships
+name: ProcessGroupMemberships
+config:

@@ -1,0 +1,12 @@
+module: idp_metadata_attribute_store.IdpMetadataAttributeStore
+name: IdpMetadataAttributeStore
+config:
+  default:
+      entity_id:
+          internal_attribute_name: idpentityid
+      display_name:
+          internal_attribute_name: idpdisplayname
+      organization_name:
+          internal_attribute_name: idporgname
+      organization_display_name:
+          internal_attribute_name: idporgdisplayname
