@@ -1,0 +1,122 @@
+@import "reset.css";
+@import "fonts.css";
+
+:root {
+	--primary-color: #2F574D;
+	--secondary-color: #777777;
+	--tertiary-color: #F2F2F2;
+
+	font-size: 16px;
+}
+
+body {
+	font-family: "Atkinson Hyperlegible", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+a {
+	font-size: 1rem;
+}
+
+#wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: var(--secondary-color);
+}
+
+#main {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+}
+
+#main p {
+	text-align: center;
+}
+
+#main img {
+	height: 48px;
+}
+
+.login-item {
+	margin: 1rem;
+}
+
+.login-item a {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	align-items: center;
+
+	text-decoration: none;
+	color: var(--primary-color);
+
+	padding: 1rem;
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 10px;
+	border-color: var(--secondary-color);
+}
+
+.login-item a:hover, .login-item a:focus {
+	text-decoration: underline;
+	background-color: var(--tertiary-color);
+}
+
+#help {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	align-items: center;
+	justify-content: center;
+}
+
+@media screen and (max-width: 430px) {
+	.login-item a {
+		justify-content: center;
+		text-align: center;
+	}
+	.login-item img {
+		display: none;
+	}
+
+	#help {
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-height: 600px) {
+	#logo {
+		display: none;
+	}
+}
+
+@media screen and (max-height: 500px) {
+	h2 {
+		display: none;
+	}
+}
