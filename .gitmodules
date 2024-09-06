@@ -1,3 +1,6 @@
 [submodule "services/comanage/comanage"]
 	path = services/comanage/comanage
 	url = https://github.com/MESH-Research/comanage-registry.git
+[submodule "services/comanage/plugins/HCConfirmer"]
+	path = services/comanage/plugins/HCConfirmer
+	url = https://github.com/MESH-Research/HCConfirmer.git
