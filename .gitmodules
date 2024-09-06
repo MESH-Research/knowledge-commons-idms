@@ -10,3 +10,6 @@
 [submodule "services/comanage/plugins/CivicrmSource"]
 	path = services/comanage/plugins/CivicrmSource
 	url = https://github.com/MESH-Research/CivicrmSource.git
+[submodule "services/comanage/plugins/HcNestedGroupJob"]
+	path = services/comanage/plugins/HcNestedGroupJob
+	url = https://github.com/MESH-Research/HcNestedGroupJob.git
