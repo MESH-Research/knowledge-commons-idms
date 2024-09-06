@@ -4,3 +4,9 @@
 [submodule "services/comanage/plugins/HCConfirmer"]
 	path = services/comanage/plugins/HCConfirmer
 	url = https://github.com/MESH-Research/HCConfirmer.git
+[submodule "services/comanage/plugins/MlaSource"]
+	path = services/comanage/plugins/MlaSource
+	url = https://github.com/MESH-Research/MlaSource.git
+[submodule "services/comanage/plugins/CivicrmSource"]
+	path = services/comanage/plugins/CivicrmSource
+	url = https://github.com/MESH-Research/CivicrmSource.git
