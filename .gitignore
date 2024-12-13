@@ -201,3 +201,7 @@ vendor/
 # Certificates and keys
 *.crt
 *.key
+
+# SimpleSAMLphp
+local-sp/cache/
+local-sp/logs/

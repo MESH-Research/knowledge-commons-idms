@@ -1,0 +1,17 @@
+name: knowledge-commons-idms
+services:
+  sp:
+    type: php:8.2
+    webroot: services/local-sp/web
+    via: nginx
+    ssl: true
+    config:
+      vhosts: services/local-sp/lando/nginx.conf
+    overrides:
+      environment:
+        - SIMPLESAMLPHP_CONFIG_DIR=/app/services/local-sp/config
+proxy:
+  sp_nginx:
+    - sp.idms.lndo.site
+
+
