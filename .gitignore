@@ -205,3 +205,6 @@ vendor/
 # SimpleSAMLphp
 local-sp/cache/
 local-sp/logs/
+
+# Playwright
+playwright/browser-cache/
