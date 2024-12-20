@@ -67,7 +67,7 @@ $config = [
      * When specified as a relative path, this is relative to the SimpleSAMLphp
      * root directory.
      */
-    'cachedir' => '/app/local-sp/cache',
+    'cachedir' => '/app/services/local-sp/cache',
     //'loggingdir' => '/var/log/',
     //'datadir' => '/var/data/',
     //'tempdir' => '/tmp/simplesamlphp',
