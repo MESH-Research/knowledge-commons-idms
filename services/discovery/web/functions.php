@@ -107,7 +107,7 @@ function get_discovery_mode() {
 		return $discovery_mode;
 	}
 	
-	$cookie = $_COOKIE['registry_enrollment_flow'];
+	$cookie = $_COOKIE['registry_enrollment_flow'] ?? null;
 	if ( $cookie ) {
 		$cookie_data = json_decode( $cookie, true );
 		if ( isset( $cookie_data['discovery_mode' ] ) ) {

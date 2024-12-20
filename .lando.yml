@@ -10,8 +10,15 @@ services:
     overrides:
       environment:
         - SIMPLESAMLPHP_CONFIG_DIR=/app/services/local-sp/config
+  discovery:
+    type: php:8.2
+    webroot: services/discovery/web
+    via: nginx
+    ssl: true
 proxy:
   sp_nginx:
     - sp.idms.lndo.site
+  discovery_nginx:
+    - discovery.idms.lndo.site
 
 
