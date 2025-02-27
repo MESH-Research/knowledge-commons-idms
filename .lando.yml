@@ -1,15 +1,15 @@
 name: knowledge-commons-idms
 services:
-  sp:
-    type: php:8.2
-    webroot: services/local-sp/web
+  comanage:
+    api: 3
+    type: php:custom
+    overrides:
+      image: lando-comanage:latest
+      build: ./services/comanage
     via: nginx
     ssl: true
     config:
-      vhosts: services/local-sp/lando/nginx.conf
-    overrides:
-      environment:
-        - SIMPLESAMLPHP_CONFIG_DIR=/app/services/local-sp/config
+      vhosts: services/comanage/lando/nginx.conf
   discovery:
     type: php:8.2
     webroot: services/discovery/web
@@ -22,12 +22,25 @@ services:
     overrides:
       environment:
         - PLAYWRIGHT_BROWSERS_PATH=/app/playwright/browser-cache
+  sp:
+    type: php:8.2
+    webroot: services/local-sp/web
+    via: nginx
+    ssl: true
+    config:
+      vhosts: services/local-sp/lando/nginx.conf
+    overrides:
+      environment:
+        - SIMPLESAMLPHP_CONFIG_DIR=/app/services/local-sp/config
+
 
 proxy:
   sp_nginx:
     - sp.idms.lndo.site
   discovery_nginx:
     - discovery.idms.lndo.site
+  comanage_nginx:
+    - comanage.idms.lndo.site
 tooling:
   run-tests:
     service: playwright 

@@ -19,3 +19,4 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /comanage
 RUN curl -L https://github.com/Internet2/comanage-registry/archive/4.4.1.tar.gz | tar -xz --strip-components=1
 
+COPY ./phpinfo.php /comanage/phpinfo.php
