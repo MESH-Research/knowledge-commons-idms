@@ -1,22 +1,15 @@
-FROM php:8.2-fpm
+FROM comanage-registry:latest
 
-RUN apt-get update && apt-get install -y \
-    libfreetype6-dev \
-    libjpeg62-turbo-dev \
-    libpng-dev \
-    libldap2-dev \
-    libxslt1-dev \
-    libicu-dev \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-configure ldap \
-    && docker-php-ext-install -j$(nproc) \
-    gd \
-    ldap \
-    xsl \
-    intl \
-    pcntl
+COPY ./phpinfo.php /srv/comanage-registry/app/phpinfo.php
+RUN chown -R www-data:www-data /srv/comanage-registry/app/phpinfo.php
 
-WORKDIR /comanage
-RUN curl -L https://github.com/Internet2/comanage-registry/archive/4.4.1.tar.gz | tar -xz --strip-components=1
+COPY ./docker-build/000-comanage.conf /etc/apache2/sites-available/000-comanage.conf
+RUN a2ensite 000-comanage.conf
 
-COPY ./phpinfo.php /comanage/phpinfo.php
+COPY ./docker-build/envvars /etc/apache2/envvars
+RUN chown www-data:www-data /etc/apache2/envvars
+
+COPY ./docker-build/basic-auth /etc/apache2/basic-auth
+RUN chown www-data:www-data /etc/apache2/basic-auth
+
+EXPOSE 443

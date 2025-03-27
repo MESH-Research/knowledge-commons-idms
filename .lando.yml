@@ -1,15 +1,37 @@
 name: knowledge-commons-idms
+
 services:
   comanage:
-    api: 3
-    type: php:custom
-    overrides:
-      image: lando-comanage:latest
-      build: ./services/comanage
-    via: nginx
+    type: lando
+    app_mount: disabled
     ssl: true
-    config:
-      vhosts: services/comanage/lando/nginx.conf
+    services:
+      build:
+        context: ./services/comanage
+        dockerfile: Dockerfile
+      command: "docker-comanage-entrypoint apache2-foreground"
+      ports:
+        - 80
+        - 443
+    overrides:
+      volumes:
+        - ./services/comanage/local:/srv/comanage-registry/local
+        - ./services/comanage/cache:/var/cache/registry
+      environment:
+        - COMANAGE_DB_HOST=comanage-db
+        - COMANAGE_DB_USER=registry
+        - COMANAGE_DB_PASSWORD=registry
+        - COMANAGE_DB_NAME=registry
+        - COMANAGE_REGISTRY_ADMIN_GIVEN_NAME=Admin
+        - COMANAGE_REGISTRY_ADMIN_FAMILY_NAME=Local
+        - COMANAGE_REGISTRY_ADMIN_USERNAME=admin
+  comanage-db:
+    type: mariadb
+    creds:
+      user: registry
+      password: registry
+      database: registry
+    healthcheck: false
   discovery:
     type: php:8.2
     webroot: services/discovery/web
@@ -33,21 +55,21 @@ services:
       environment:
         - SIMPLESAMLPHP_CONFIG_DIR=/app/services/local-sp/config
 
-
 proxy:
   sp_nginx:
-    - sp.idms.lndo.site
+    - sp.lndo.site
   discovery_nginx:
-    - discovery.idms.lndo.site
-  comanage_nginx:
-    - comanage.idms.lndo.site
+    - discovery.lndo.site
+  comanage:
+    - comanage.lndo.site
+
 tooling:
   run-tests:
-    service: playwright 
+    service: playwright
     description: Runs playwright tests
     dir: /app/playwright
     cmd: npx playwright test --reporter=line
- 
-
-
-
+  mysql-comanage:
+    service: comanage-db
+    description: Connects to the comanage database
+    cmd: mysql -u registry -pregistry registry

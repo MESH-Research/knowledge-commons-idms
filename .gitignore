@@ -210,3 +210,12 @@ services/local-sp/logs/
 
 # Playwright
 playwright/browser-cache/
+
+# Comanage
+services/comanage/cache/*
+!services/comanage/cache/.gitkeep
+services/comanage/comanage-registry
+comanage-registry/
+
+security.salt
+security.seed
