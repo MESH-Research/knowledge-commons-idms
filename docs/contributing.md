@@ -28,3 +28,7 @@ There are two principle branches:
 - `production` -- The current production version of the stack. Ideally this branch should only be updated by fast-forward merges from `main`.
 
 Feature branches should be short-lived and merged frequently to `main`.
+
+## Secrets, Environment Variables, and Testing
+
+Ideally, no secrets and no real data should be necessary to run and test the stack locally. Environment variables should be included in the Landofile (not `.env` files) and any user accounts & data should be synthetic rather than imported from live services. When a bug is found on the live site, attempt to replicate it synthetically.
