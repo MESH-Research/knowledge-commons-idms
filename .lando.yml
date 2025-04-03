@@ -38,9 +38,9 @@ services:
     via: nginx
     ssl: true
   playwright:
-    type: node:22
+    type: node:23
     build_as_root:
-      - cd /app/playwright && npx playwright install --with-deps
+      - cd /app/playwright && npm install && npx playwright install --with-deps
     overrides:
       environment:
         - PLAYWRIGHT_BROWSERS_PATH=/app/playwright/browser-cache
