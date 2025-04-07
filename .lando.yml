@@ -32,6 +32,7 @@ services:
       password: registry
       database: registry
     healthcheck: false
+    portforward: true
   discovery:
     type: php:8.2
     webroot: services/discovery/web
