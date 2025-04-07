@@ -249,7 +249,7 @@ CREATE TABLE `cm_authentication_events` (
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `cm_authentication_events_i1` (`authenticated_identifier`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -258,7 +258,7 @@ CREATE TABLE `cm_authentication_events` (
 
 LOCK TABLES `cm_authentication_events` WRITE;
 /*!40000 ALTER TABLE `cm_authentication_events` DISABLE KEYS */;
-INSERT INTO `cm_authentication_events` VALUES (1,'admin','IN','172.20.0.2','2025-03-27 15:01:58','2025-03-27 15:01:58');
+INSERT INTO `cm_authentication_events` VALUES (1,'admin','IN','172.20.0.2','2025-03-27 15:01:58','2025-03-27 15:01:58'),(2,'admin','IN','172.20.0.2','2025-04-07 16:24:39','2025-04-07 16:24:39');
 /*!40000 ALTER TABLE `cm_authentication_events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -431,7 +431,7 @@ CREATE TABLE `cm_cmp_enrollment_configurations` (
 
 LOCK TABLES `cm_cmp_enrollment_configurations` WRITE;
 /*!40000 ALTER TABLE `cm_cmp_enrollment_configurations` DISABLE KEYS */;
-INSERT INTO `cm_cmp_enrollment_configurations` VALUES (1,'CMP Enrollment Configuration',0,0,0,1,1,0,NULL,NULL,NULL,NULL,'/','A','2025-03-27 15:01:41','2025-03-27 15:01:58');
+INSERT INTO `cm_cmp_enrollment_configurations` VALUES (1,'CMP Enrollment Configuration',0,0,0,1,1,0,NULL,NULL,NULL,NULL,'/','A','2025-03-27 15:01:41','2025-04-07 16:24:39');
 /*!40000 ALTER TABLE `cm_cmp_enrollment_configurations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -813,7 +813,7 @@ CREATE TABLE `cm_co_enrollment_attribute_defaults` (
   PRIMARY KEY (`id`),
   KEY `cm_co_enrollment_attribute_defaults_i1` (`co_enrollment_attribute_id`),
   KEY `cm_co_enrollment_attribute_defaults_i2` (`co_enrollment_attribute_default_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -822,6 +822,7 @@ CREATE TABLE `cm_co_enrollment_attribute_defaults` (
 
 LOCK TABLES `cm_co_enrollment_attribute_defaults` WRITE;
 /*!40000 ALTER TABLE `cm_co_enrollment_attribute_defaults` DISABLE KEYS */;
+INSERT INTO `cm_co_enrollment_attribute_defaults` VALUES (1,3,NULL,'',1,'2025-04-07 16:44:52','2025-04-07 16:44:52',NULL,0,0,'admin'),(2,4,NULL,'',1,'2025-04-07 16:45:35','2025-04-07 16:45:35',NULL,0,0,'admin'),(3,5,NULL,'member',0,'2025-04-07 16:46:18','2025-04-07 16:46:18',NULL,0,0,'admin'),(4,7,NULL,'1',0,'2025-04-07 16:47:55','2025-04-07 16:47:55',NULL,0,0,'admin');
 /*!40000 ALTER TABLE `cm_co_enrollment_attribute_defaults` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -861,7 +862,7 @@ CREATE TABLE `cm_co_enrollment_attributes` (
   CONSTRAINT `cm_co_enrollment_attributes_co_enrollment_attribute_id_fk` FOREIGN KEY (`co_enrollment_attribute_id`) REFERENCES `cm_co_enrollment_attributes` (`id`),
   CONSTRAINT `cm_co_enrollment_attributes_co_enrollment_flow_id_fk` FOREIGN KEY (`co_enrollment_flow_id`) REFERENCES `cm_co_enrollment_flows` (`id`),
   CONSTRAINT `cm_co_enrollment_attributes_configuration_label_id_fk` FOREIGN KEY (`configuration_label_id`) REFERENCES `cm_configuration_labels` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -870,6 +871,7 @@ CREATE TABLE `cm_co_enrollment_attributes` (
 
 LOCK TABLES `cm_co_enrollment_attributes` WRITE;
 /*!40000 ALTER TABLE `cm_co_enrollment_attributes` DISABLE KEYS */;
+INSERT INTO `cm_co_enrollment_attributes` VALUES (1,1,'Name','','i:name:official',1,'given',1,0,1,NULL,'',0,'','2025-04-07 16:43:22','2025-04-07 16:43:22',NULL,NULL,0,0,'admin'),(2,1,'E-mail','You\'ll need access to this e-mail account in order to complete the registration process.','i:email_address:official',1,'',2,0,1,NULL,'',0,'','2025-04-07 16:44:01','2025-04-07 16:44:01',NULL,NULL,0,0,'admin'),(3,1,'Position','Independent scholars welcome!','r:title',1,'',3,0,0,NULL,'',0,'','2025-04-07 16:44:52','2025-04-07 16:44:52',NULL,NULL,0,0,'admin'),(4,1,'Organization','Providing this will help you find your colleagues on the Commons','r:o',0,'',4,0,0,NULL,'',0,'','2025-04-07 16:45:35','2025-04-07 16:45:35',NULL,NULL,0,0,'admin'),(5,1,'Affiliation','','r:affiliation',1,'',5,1,0,NULL,'',0,'','2025-04-07 16:46:18','2025-04-07 16:46:18',NULL,NULL,0,0,'admin'),(6,1,'Commons Username','Self selected, currently no format or availability checking','p:identifier:uid',-1,'',6,0,0,NULL,'',0,'','2025-04-07 16:47:21','2025-04-07 16:54:50',NULL,NULL,1,0,'admin'),(7,1,'COU','','r:cou_id',1,'',7,1,0,NULL,'',0,'','2025-04-07 16:47:55','2025-04-07 16:47:55',NULL,NULL,0,0,'admin'),(8,1,'Commons Username','Self selected, currently no format or availability checking','p:identifier:sor-affiliate',-1,'',6,0,0,NULL,'',0,'','2025-04-07 16:47:21','2025-04-07 16:47:21',6,NULL,0,0,'admin');
 /*!40000 ALTER TABLE `cm_co_enrollment_attributes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1075,7 +1077,7 @@ CREATE TABLE `cm_co_enrollment_flows` (
   CONSTRAINT `cm_co_enrollment_flows_match_server_id_fk` FOREIGN KEY (`match_server_id`) REFERENCES `cm_servers` (`id`),
   CONSTRAINT `cm_co_enrollment_flows_notification_co_group_id_fk` FOREIGN KEY (`notification_co_group_id`) REFERENCES `cm_co_groups` (`id`),
   CONSTRAINT `cm_co_enrollment_flows_verification_template_id_fk` FOREIGN KEY (`verification_template_id`) REFERENCES `cm_co_message_templates` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1084,6 +1086,7 @@ CREATE TABLE `cm_co_enrollment_flows` (
 
 LOCK TABLES `cm_co_enrollment_flows` WRITE;
 /*!40000 ALTER TABLE `cm_co_enrollment_flows` DISABLE KEYS */;
+INSERT INTO `cm_co_enrollment_flows` VALUES (1,'Knowledge Commons Self Signup','',2,'N',NULL,NULL,0,'N',NULL,0,0,NULL,'N','N',NULL,'R',1440,0,1,NULL,'A','hc@hcommons.org','Activate your Knowledge Commons account now!','Thank you for signing up for Knowledge Commons. Whether you\'re planning to build a professional web site, share your work using our open access repository, or participate in conversations in your field, we\'re excited to have you on board! \r\n\r\nIn order to confirm that you are really you, please copy the link below and paste it into your browser. We\'ll ask you to choose how you\'d like to log in to Knowledge Commons and then (finally!) actually let you log in. Phew.\r\n\r\n(@INVITE_URL)',NULL,0,0,'Petition to join (@CO_NAME) has been approved','Your petition to join (@CO_NAME) as been approved. You may now log in to the platform.',NULL,NULL,NULL,0,NULL,'<style type=\"text/css\">\r\n.sidebar {\r\nmargin-top: 0px !important;\r\n}\r\n\r\n#enrollmentFlowIntro { \r\n  font-size: 16px;\r\n  width: 60%;\r\n  line-height: 1.7em;\r\n  font-family: proxima-nova, sans-serif;\r\n}\r\n\r\n.enrollmentIntroSidebar { top: 150px }\r\n</style>\r\n\r\n<div class=\"sidebar enrollmentIntroSidebar\"></div>\r\n\r\n<p>So you want to join <em>Knowledge Commons</em>? We\'d be delighted to have you on board! </p> \r\n<p>During registration, we\'ll ask you to:</p>\r\n<ul> \r\n<li>Enter and confirm your e-mail address (to prove that you are really you)</li>\r\n<li>Choose a <em>Knowledge Commons</em> username</li>\r\n<li>Choose a way you\'d like to log in to the platform going forward</li> \r\n</ul>\r\n<p>Once you\'ve done all that, you\'ll be able to log in and go!</p>\r\n<p>P.S. If you\'re a member of one of our partner societies (AJS, ASEEES, CAA, and MLA), we suggest enrolling with the e-mail address registered with that society to ensure you have full access to its <em>Commons</em> site.</p>','','',NULL,'https://comanage.lndo.site/after_submission/index-hc.php','https://satosa.lndo.site/Saml2/unsolicited?providerId=https%3A%2F%2Fhcommons.org%2Fshibboleth&discoveryURL=https%3A%2F%2Fregistry.hcommons.org%2Fdiscovery_service_enrollment%2Findex.php&discoveryPolicy=urn%3Amla.org%3ASAML%3Aprofile%3ASSO%3Aidp-discovery-protocol%3Acommons_enrollment&target=https%3A%2F%2Fhcommons.org%2Fwp-login.php','','',NULL,'D',NULL,'A',NULL,NULL,'2025-04-07 16:42:22','2025-04-07 16:42:22',NULL,0,0,'admin');
 /*!40000 ALTER TABLE `cm_co_enrollment_flows` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1276,7 +1279,7 @@ CREATE TABLE `cm_co_extended_types` (
   KEY `cm_co_extended_types_i1` (`co_id`,`attribute`),
   KEY `cm_co_extended_types_i2` (`co_id`,`attribute`,`name`),
   CONSTRAINT `cm_co_extended_types_co_id_fk` FOREIGN KEY (`co_id`) REFERENCES `cm_cos` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=131 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1285,7 +1288,7 @@ CREATE TABLE `cm_co_extended_types` (
 
 LOCK TABLES `cm_co_extended_types` WRITE;
 /*!40000 ALTER TABLE `cm_co_extended_types` DISABLE KEYS */;
-INSERT INTO `cm_co_extended_types` VALUES (1,1,'Address.type','campus','Campus',NULL,'A'),(2,1,'Address.type','home','Home',NULL,'A'),(3,1,'Address.type','office','Office',NULL,'A'),(4,1,'Address.type','postal','Postal',NULL,'A'),(5,1,'CoDepartment.type','vo','VO',NULL,'A'),(6,1,'CoDepartment.type','researchinstitute','Research Institute',NULL,'A'),(7,1,'CoDepartment.type','department','Department',NULL,'A'),(8,1,'Contact.type','administrative','Administrative',NULL,'A'),(9,1,'Contact.type','billing','Billing',NULL,'A'),(10,1,'Contact.type','other','Other',NULL,'A'),(11,1,'Contact.type','support','Support',NULL,'A'),(12,1,'Contact.type','technical','Technical',NULL,'A'),(13,1,'CoPersonRole.affiliation','faculty','Faculty',NULL,'A'),(14,1,'CoPersonRole.affiliation','student','Student',NULL,'A'),(15,1,'CoPersonRole.affiliation','staff','Staff',NULL,'A'),(16,1,'CoPersonRole.affiliation','alum','Alum',NULL,'A'),(17,1,'CoPersonRole.affiliation','member','Member',NULL,'A'),(18,1,'CoPersonRole.affiliation','affiliate','Affiliate',NULL,'A'),(19,1,'CoPersonRole.affiliation','employee','Employee',NULL,'A'),(20,1,'CoPersonRole.affiliation','librarywalkin','Library Walk-In',NULL,'A'),(21,1,'EmailAddress.type','delivery','Delivery',NULL,'A'),(22,1,'EmailAddress.type','forwarding','Forwarding',NULL,'A'),(23,1,'EmailAddress.type','list','Mailing List',NULL,'A'),(24,1,'EmailAddress.type','official','Official',NULL,'A'),(25,1,'EmailAddress.type','personal','Personal',NULL,'A'),(26,1,'EmailAddress.type','preferred','Preferred',NULL,'A'),(27,1,'EmailAddress.type','recovery','Recovery',NULL,'A'),(28,1,'Identifier.type','sor-affiliate','Affiliate SoRID',NULL,'A'),(29,1,'Identifier.type','badge','Badge',NULL,'A'),(30,1,'Identifier.type','enterprise','Enterprise',NULL,'A'),(31,1,'Identifier.type','entityid','Entity ID',NULL,'A'),(32,1,'Identifier.type','eppn','ePPN',NULL,'A'),(33,1,'Identifier.type','eptid','ePTID',NULL,'A'),(34,1,'Identifier.type','epuid','ePUID',NULL,'A'),(35,1,'Identifier.type','sor-guest','Guest SoRID',NULL,'A'),(36,1,'Identifier.type','sor-hr','HR SoRID',NULL,'A'),(37,1,'Identifier.type','mail','Mail',NULL,'A'),(38,1,'Identifier.type','name','Name',NULL,'A'),(39,1,'Identifier.type','national','National',NULL,'A'),(40,1,'Identifier.type','network','Network',NULL,'A'),(41,1,'Identifier.type','oidcsub','OIDC sub',NULL,'A'),(42,1,'Identifier.type','openid','OpenID',NULL,'A'),(43,1,'Identifier.type','orcid','ORCID iD',NULL,'A'),(44,1,'Identifier.type','provisioningtarget','Provisioning Target',NULL,'A'),(45,1,'Identifier.type','reference','Match Reference',NULL,'A'),(46,1,'Identifier.type','pairwiseid','SAML pairwise-id',NULL,'A'),(47,1,'Identifier.type','subjectid','SAML subject-id',NULL,'A'),(48,1,'Identifier.type','sorid','System of Record ID',NULL,'A'),(49,1,'Identifier.type','sor-student','Student SoRID',NULL,'A'),(50,1,'Identifier.type','uid','UID',NULL,'A'),(51,1,'Name.type','alternate','Alternate',NULL,'A'),(52,1,'Name.type','author','Author',NULL,'A'),(53,1,'Name.type','fka','FKA',NULL,'A'),(54,1,'Name.type','official','Official',NULL,'A'),(55,1,'Name.type','preferred','Preferred',NULL,'A'),(56,1,'Organization.type','edu','Academic',NULL,'A'),(57,1,'Organization.type','com','Commercial',NULL,'A'),(58,1,'Organization.type','gov','Government',NULL,'A'),(59,1,'TelephoneNumber.type','campus','Campus',NULL,'A'),(60,1,'TelephoneNumber.type','fax','Fax',NULL,'A'),(61,1,'TelephoneNumber.type','home','Home',NULL,'A'),(62,1,'TelephoneNumber.type','mobile','Mobile',NULL,'A'),(63,1,'TelephoneNumber.type','office','Office',NULL,'A'),(64,1,'Url.type','official','Official',NULL,'A'),(65,1,'Url.type','personal','Personal',NULL,'A');
+INSERT INTO `cm_co_extended_types` VALUES (1,1,'Address.type','campus','Campus',NULL,'A'),(2,1,'Address.type','home','Home',NULL,'A'),(3,1,'Address.type','office','Office',NULL,'A'),(4,1,'Address.type','postal','Postal',NULL,'A'),(5,1,'CoDepartment.type','vo','VO',NULL,'A'),(6,1,'CoDepartment.type','researchinstitute','Research Institute',NULL,'A'),(7,1,'CoDepartment.type','department','Department',NULL,'A'),(8,1,'Contact.type','administrative','Administrative',NULL,'A'),(9,1,'Contact.type','billing','Billing',NULL,'A'),(10,1,'Contact.type','other','Other',NULL,'A'),(11,1,'Contact.type','support','Support',NULL,'A'),(12,1,'Contact.type','technical','Technical',NULL,'A'),(13,1,'CoPersonRole.affiliation','faculty','Faculty',NULL,'A'),(14,1,'CoPersonRole.affiliation','student','Student',NULL,'A'),(15,1,'CoPersonRole.affiliation','staff','Staff',NULL,'A'),(16,1,'CoPersonRole.affiliation','alum','Alum',NULL,'A'),(17,1,'CoPersonRole.affiliation','member','Member',NULL,'A'),(18,1,'CoPersonRole.affiliation','affiliate','Affiliate',NULL,'A'),(19,1,'CoPersonRole.affiliation','employee','Employee',NULL,'A'),(20,1,'CoPersonRole.affiliation','librarywalkin','Library Walk-In',NULL,'A'),(21,1,'EmailAddress.type','delivery','Delivery',NULL,'A'),(22,1,'EmailAddress.type','forwarding','Forwarding',NULL,'A'),(23,1,'EmailAddress.type','list','Mailing List',NULL,'A'),(24,1,'EmailAddress.type','official','Official',NULL,'A'),(25,1,'EmailAddress.type','personal','Personal',NULL,'A'),(26,1,'EmailAddress.type','preferred','Preferred',NULL,'A'),(27,1,'EmailAddress.type','recovery','Recovery',NULL,'A'),(28,1,'Identifier.type','sor-affiliate','Affiliate SoRID',NULL,'A'),(29,1,'Identifier.type','badge','Badge',NULL,'A'),(30,1,'Identifier.type','enterprise','Enterprise',NULL,'A'),(31,1,'Identifier.type','entityid','Entity ID',NULL,'A'),(32,1,'Identifier.type','eppn','ePPN',NULL,'A'),(33,1,'Identifier.type','eptid','ePTID',NULL,'A'),(34,1,'Identifier.type','epuid','ePUID',NULL,'A'),(35,1,'Identifier.type','sor-guest','Guest SoRID',NULL,'A'),(36,1,'Identifier.type','sor-hr','HR SoRID',NULL,'A'),(37,1,'Identifier.type','mail','Mail',NULL,'A'),(38,1,'Identifier.type','name','Name',NULL,'A'),(39,1,'Identifier.type','national','National',NULL,'A'),(40,1,'Identifier.type','network','Network',NULL,'A'),(41,1,'Identifier.type','oidcsub','OIDC sub',NULL,'A'),(42,1,'Identifier.type','openid','OpenID',NULL,'A'),(43,1,'Identifier.type','orcid','ORCID iD',NULL,'A'),(44,1,'Identifier.type','provisioningtarget','Provisioning Target',NULL,'A'),(45,1,'Identifier.type','reference','Match Reference',NULL,'A'),(46,1,'Identifier.type','pairwiseid','SAML pairwise-id',NULL,'A'),(47,1,'Identifier.type','subjectid','SAML subject-id',NULL,'A'),(48,1,'Identifier.type','sorid','System of Record ID',NULL,'A'),(49,1,'Identifier.type','sor-student','Student SoRID',NULL,'A'),(50,1,'Identifier.type','uid','UID',NULL,'A'),(51,1,'Name.type','alternate','Alternate',NULL,'A'),(52,1,'Name.type','author','Author',NULL,'A'),(53,1,'Name.type','fka','FKA',NULL,'A'),(54,1,'Name.type','official','Official',NULL,'A'),(55,1,'Name.type','preferred','Preferred',NULL,'A'),(56,1,'Organization.type','edu','Academic',NULL,'A'),(57,1,'Organization.type','com','Commercial',NULL,'A'),(58,1,'Organization.type','gov','Government',NULL,'A'),(59,1,'TelephoneNumber.type','campus','Campus',NULL,'A'),(60,1,'TelephoneNumber.type','fax','Fax',NULL,'A'),(61,1,'TelephoneNumber.type','home','Home',NULL,'A'),(62,1,'TelephoneNumber.type','mobile','Mobile',NULL,'A'),(63,1,'TelephoneNumber.type','office','Office',NULL,'A'),(64,1,'Url.type','official','Official',NULL,'A'),(65,1,'Url.type','personal','Personal',NULL,'A'),(66,2,'Address.type','campus','Campus',NULL,'A'),(67,2,'Address.type','home','Home',NULL,'A'),(68,2,'Address.type','office','Office',NULL,'A'),(69,2,'Address.type','postal','Postal',NULL,'A'),(70,2,'CoDepartment.type','vo','VO',NULL,'A'),(71,2,'CoDepartment.type','researchinstitute','Research Institute',NULL,'A'),(72,2,'CoDepartment.type','department','Department',NULL,'A'),(73,2,'Contact.type','administrative','Administrative',NULL,'A'),(74,2,'Contact.type','billing','Billing',NULL,'A'),(75,2,'Contact.type','other','Other',NULL,'A'),(76,2,'Contact.type','support','Support',NULL,'A'),(77,2,'Contact.type','technical','Technical',NULL,'A'),(78,2,'CoPersonRole.affiliation','faculty','Faculty',NULL,'A'),(79,2,'CoPersonRole.affiliation','student','Student',NULL,'A'),(80,2,'CoPersonRole.affiliation','staff','Staff',NULL,'A'),(81,2,'CoPersonRole.affiliation','alum','Alum',NULL,'A'),(82,2,'CoPersonRole.affiliation','member','Member',NULL,'A'),(83,2,'CoPersonRole.affiliation','affiliate','Affiliate',NULL,'A'),(84,2,'CoPersonRole.affiliation','employee','Employee',NULL,'A'),(85,2,'CoPersonRole.affiliation','librarywalkin','Library Walk-In',NULL,'A'),(86,2,'EmailAddress.type','delivery','Delivery',NULL,'A'),(87,2,'EmailAddress.type','forwarding','Forwarding',NULL,'A'),(88,2,'EmailAddress.type','list','Mailing List',NULL,'A'),(89,2,'EmailAddress.type','official','Official',NULL,'A'),(90,2,'EmailAddress.type','personal','Personal',NULL,'A'),(91,2,'EmailAddress.type','preferred','Preferred',NULL,'A'),(92,2,'EmailAddress.type','recovery','Recovery',NULL,'A'),(93,2,'Identifier.type','sor-affiliate','Affiliate SoRID',NULL,'A'),(94,2,'Identifier.type','badge','Badge',NULL,'A'),(95,2,'Identifier.type','enterprise','Enterprise',NULL,'A'),(96,2,'Identifier.type','entityid','Entity ID',NULL,'A'),(97,2,'Identifier.type','eppn','ePPN',NULL,'A'),(98,2,'Identifier.type','eptid','ePTID',NULL,'A'),(99,2,'Identifier.type','epuid','ePUID',NULL,'A'),(100,2,'Identifier.type','sor-guest','Guest SoRID',NULL,'A'),(101,2,'Identifier.type','sor-hr','HR SoRID',NULL,'A'),(102,2,'Identifier.type','mail','Mail',NULL,'A'),(103,2,'Identifier.type','name','Name',NULL,'A'),(104,2,'Identifier.type','national','National',NULL,'A'),(105,2,'Identifier.type','network','Network',NULL,'A'),(106,2,'Identifier.type','oidcsub','OIDC sub',NULL,'A'),(107,2,'Identifier.type','openid','OpenID',NULL,'A'),(108,2,'Identifier.type','orcid','ORCID iD',NULL,'A'),(109,2,'Identifier.type','provisioningtarget','Provisioning Target',NULL,'A'),(110,2,'Identifier.type','reference','Match Reference',NULL,'A'),(111,2,'Identifier.type','pairwiseid','SAML pairwise-id',NULL,'A'),(112,2,'Identifier.type','subjectid','SAML subject-id',NULL,'A'),(113,2,'Identifier.type','sorid','System of Record ID',NULL,'A'),(114,2,'Identifier.type','sor-student','Student SoRID',NULL,'A'),(115,2,'Identifier.type','uid','UID',NULL,'A'),(116,2,'Name.type','alternate','Alternate',NULL,'A'),(117,2,'Name.type','author','Author',NULL,'A'),(118,2,'Name.type','fka','FKA',NULL,'A'),(119,2,'Name.type','official','Official',NULL,'A'),(120,2,'Name.type','preferred','Preferred',NULL,'A'),(121,2,'Organization.type','edu','Academic',NULL,'A'),(122,2,'Organization.type','com','Commercial',NULL,'A'),(123,2,'Organization.type','gov','Government',NULL,'A'),(124,2,'TelephoneNumber.type','campus','Campus',NULL,'A'),(125,2,'TelephoneNumber.type','fax','Fax',NULL,'A'),(126,2,'TelephoneNumber.type','home','Home',NULL,'A'),(127,2,'TelephoneNumber.type','mobile','Mobile',NULL,'A'),(128,2,'TelephoneNumber.type','office','Office',NULL,'A'),(129,2,'Url.type','official','Official',NULL,'A'),(130,2,'Url.type','personal','Personal',NULL,'A');
 /*!40000 ALTER TABLE `cm_co_extended_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1516,7 +1519,7 @@ CREATE TABLE `cm_co_groups` (
   CONSTRAINT `cm_co_groups_co_group_id_fk` FOREIGN KEY (`co_group_id`) REFERENCES `cm_co_groups` (`id`),
   CONSTRAINT `cm_co_groups_co_id_fk` FOREIGN KEY (`co_id`) REFERENCES `cm_cos` (`id`),
   CONSTRAINT `cm_co_groups_cou_id_fk` FOREIGN KEY (`cou_id`) REFERENCES `cm_cous` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1525,7 +1528,7 @@ CREATE TABLE `cm_co_groups` (
 
 LOCK TABLES `cm_co_groups` WRITE;
 /*!40000 ALTER TABLE `cm_co_groups` DISABLE KEYS */;
-INSERT INTO `cm_co_groups` VALUES (1,1,NULL,'CO:admins','COmanage Administrators',0,'A','A',0,NULL,'2025-03-27 15:01:41','2025-03-27 15:01:41',NULL,0,0,'Shell user \"root\"'),(2,1,NULL,'CO:approvers','COmanage Approvers',0,'A','AP',0,NULL,'2025-03-27 15:01:41','2025-03-27 15:01:41',NULL,0,0,'Shell user \"root\"'),(3,1,NULL,'CO:members:active','COmanage Active Members',0,'A','MA',1,NULL,'2025-03-27 15:01:41','2025-03-27 15:01:41',NULL,0,0,'Shell user \"root\"'),(4,1,NULL,'CO:members:all','COmanage Members',0,'A','M',1,NULL,'2025-03-27 15:01:41','2025-03-27 15:01:41',NULL,0,0,'Shell user \"root\"');
+INSERT INTO `cm_co_groups` VALUES (1,1,NULL,'CO:admins','COmanage Administrators',0,'A','A',0,NULL,'2025-03-27 15:01:41','2025-03-27 15:01:41',NULL,0,0,'Shell user \"root\"'),(2,1,NULL,'CO:approvers','COmanage Approvers',0,'A','AP',0,NULL,'2025-03-27 15:01:41','2025-03-27 15:01:41',NULL,0,0,'Shell user \"root\"'),(3,1,NULL,'CO:members:active','COmanage Active Members',0,'A','MA',1,NULL,'2025-03-27 15:01:41','2025-03-27 15:01:41',NULL,0,0,'Shell user \"root\"'),(4,1,NULL,'CO:members:all','COmanage Members',0,'A','M',1,NULL,'2025-03-27 15:01:41','2025-03-27 15:01:41',NULL,0,0,'Shell user \"root\"'),(5,2,NULL,'CO:admins','Knowledge Commons Administrators',0,'A','A',0,NULL,'2025-04-07 16:30:27','2025-04-07 16:30:27',NULL,0,0,'admin'),(6,2,NULL,'CO:approvers','Knowledge Commons Approvers',0,'A','AP',0,NULL,'2025-04-07 16:30:27','2025-04-07 16:30:27',NULL,0,0,'admin'),(7,2,NULL,'CO:members:active','Knowledge Commons Active Members',0,'A','MA',1,NULL,'2025-04-07 16:30:27','2025-04-07 16:30:27',NULL,0,0,'admin'),(8,2,NULL,'CO:members:all','Knowledge Commons Members',0,'A','M',1,NULL,'2025-04-07 16:30:27','2025-04-07 16:30:27',NULL,0,0,'admin'),(9,2,1,'CO:COU:KC:admins','KC Administrators',0,'A','A',0,NULL,'2025-04-07 16:34:13','2025-04-07 16:34:13',NULL,0,0,'admin'),(10,2,1,'CO:COU:KC:approvers','KC Approvers',0,'A','AP',0,NULL,'2025-04-07 16:34:13','2025-04-07 16:34:13',NULL,0,0,'admin'),(11,2,1,'CO:COU:KC:members:active','KC Active Members',0,'A','MA',1,NULL,'2025-04-07 16:34:13','2025-04-07 16:34:13',NULL,0,0,'admin'),(12,2,1,'CO:COU:KC:members:all','KC Members',0,'A','M',1,NULL,'2025-04-07 16:34:13','2025-04-07 16:34:13',NULL,0,0,'admin');
 /*!40000 ALTER TABLE `cm_co_groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2801,7 +2804,7 @@ CREATE TABLE `cm_co_settings` (
   CONSTRAINT `cm_co_settings_co_id_fk` FOREIGN KEY (`co_id`) REFERENCES `cm_cos` (`id`),
   CONSTRAINT `cm_co_settings_co_theme_id_fk` FOREIGN KEY (`co_theme_id`) REFERENCES `cm_co_themes` (`id`),
   CONSTRAINT `cm_co_settings_default_co_pipeline_id_fk` FOREIGN KEY (`default_co_pipeline_id`) REFERENCES `cm_co_pipelines` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2810,6 +2813,7 @@ CREATE TABLE `cm_co_settings` (
 
 LOCK TABLES `cm_co_settings` WRITE;
 /*!40000 ALTER TABLE `cm_co_settings` DISABLE KEYS */;
+INSERT INTO `cm_co_settings` VALUES (1,1,0,0,0,0,1440,1440,1,0,1440,'honorific,given,middle,family,suffix','street','given','','',0,'R','A','S',NULL,NULL,'M',NULL,NULL,500,'2025-04-07 16:28:03','2025-04-07 16:29:10'),(2,2,0,0,0,0,1440,1440,1,0,1440,'honorific,given,middle,family,suffix','street','given','','',0,'R','A','S',NULL,NULL,'M',NULL,NULL,500,'2025-04-07 16:30:58','2025-04-07 16:31:22');
 /*!40000 ALTER TABLE `cm_co_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2874,7 +2878,7 @@ CREATE TABLE `cm_co_terms_and_conditions` (
   CONSTRAINT `cm_co_terms_and_conditions_co_id_fk` FOREIGN KEY (`co_id`) REFERENCES `cm_cos` (`id`),
   CONSTRAINT `cm_co_terms_and_conditions_co_terms_and_conditions_id_fk` FOREIGN KEY (`co_terms_and_conditions_id`) REFERENCES `cm_co_terms_and_conditions` (`id`),
   CONSTRAINT `cm_co_terms_and_conditions_cou_id_fk` FOREIGN KEY (`cou_id`) REFERENCES `cm_cous` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2883,6 +2887,7 @@ CREATE TABLE `cm_co_terms_and_conditions` (
 
 LOCK TABLES `cm_co_terms_and_conditions` WRITE;
 /*!40000 ALTER TABLE `cm_co_terms_and_conditions` DISABLE KEYS */;
+INSERT INTO `cm_co_terms_and_conditions` VALUES (1,2,'Knowledge Commons Terms and Conditions','https://registry.hcommons.org/registry/pages/public/terms','',NULL,'A',1,'2025-04-07 16:52:50','2025-04-07 16:52:50',NULL,0,0,'admin');
 /*!40000 ALTER TABLE `cm_co_terms_and_conditions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3089,7 +3094,7 @@ CREATE TABLE `cm_cos` (
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `cm_cos_i1` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3098,7 +3103,7 @@ CREATE TABLE `cm_cos` (
 
 LOCK TABLES `cm_cos` WRITE;
 /*!40000 ALTER TABLE `cm_cos` DISABLE KEYS */;
-INSERT INTO `cm_cos` VALUES (1,'COmanage','COmanage Registry Internal CO','A','2025-03-27 15:01:41','2025-03-27 15:01:41');
+INSERT INTO `cm_cos` VALUES (1,'COmanage','COmanage Registry Internal CO','A','2025-03-27 15:01:41','2025-03-27 15:01:41'),(2,'Knowledge Commons','Knowledge Commons organizations','A','2025-04-07 16:30:27','2025-04-07 16:30:27');
 /*!40000 ALTER TABLE `cm_cos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3133,7 +3138,7 @@ CREATE TABLE `cm_cous` (
   CONSTRAINT `cm_cous_co_id_fk` FOREIGN KEY (`co_id`) REFERENCES `cm_cos` (`id`),
   CONSTRAINT `cm_cous_cou_id_fk` FOREIGN KEY (`cou_id`) REFERENCES `cm_cous` (`id`),
   CONSTRAINT `cm_cous_parent_id_fk` FOREIGN KEY (`parent_id`) REFERENCES `cm_cous` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3142,6 +3147,7 @@ CREATE TABLE `cm_cous` (
 
 LOCK TABLES `cm_cous` WRITE;
 /*!40000 ALTER TABLE `cm_cous` DISABLE KEYS */;
+INSERT INTO `cm_cous` VALUES (1,2,'KC','Knowledge Commons','',NULL,1,2,'2025-04-07 16:34:13','2025-04-07 16:34:13',NULL,0,0,'admin');
 /*!40000 ALTER TABLE `cm_cous` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5036,4 +5042,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-07 16:21:23
+-- Dump completed on 2025-04-07 17:11:06
