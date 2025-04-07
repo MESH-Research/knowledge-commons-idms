@@ -74,3 +74,13 @@ tooling:
     service: comanage-db
     description: Connects to the comanage database
     cmd: mysql -u registry -pregistry registry
+  comanage-db-export:
+    service: comanage-db
+    dir: /app/services/comanage
+    description: Exports the comanage database
+    cmd: mysqldump -u registry -pregistry registry > registry.sql
+  comanage-db-import:
+    service: comanage-db
+    dir: /app/services/comanage
+    description: Imports the comanage database
+    cmd: mysql -u registry -pregistry registry < registry.sql
