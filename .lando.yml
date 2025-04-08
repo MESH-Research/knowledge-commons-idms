@@ -70,7 +70,7 @@ tooling:
     description: Runs playwright tests
     dir: /app/playwright
     cmd: npx playwright test --reporter=line
-  mysql-comanage:
+  comanage-mysql:
     service: comanage-db
     description: Connects to the comanage database
     cmd: mysql -u registry -pregistry registry
