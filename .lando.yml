@@ -16,6 +16,7 @@ services:
     overrides:
       volumes:
         - ./services/comanage/local:/srv/comanage-registry/local
+        - ./services/comanage/plugins:/srv/comanage-registry/plugins
         - ./services/comanage/cache:/var/cache/registry
       environment:
         - COMANAGE_DB_HOST=comanage-db
