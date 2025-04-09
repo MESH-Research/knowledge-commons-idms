@@ -1,0 +1,26 @@
+/* Sections
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.section {
+  padding: 2rem 0 1rem;
+  text-align: center;
+}
+.section-heading,
+.section-description {
+  margin-bottom: 1.2rem;
+}
+
+.with-flex {
+    display: flex;
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+input {
+    margin-bottom: 2px;
+}
+
+form {
+    margin-bottom: 2px;
+}

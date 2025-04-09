@@ -1,0 +1,556 @@
+body {
+  position: relative;
+  min-height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+body > .section {
+  font-size: 15px;
+}
+
+body.discovery-service-enrollment > .section, body.discovery-service-registry > .section {
+  height: auto;
+}
+
+#row1 {
+  background-color: #333;
+  color: white;
+  padding: 0 0 4px 0;
+  height: 26px;
+  margin-top: -20px;
+}
+
+#customHeader, #customHeader .contentWidth {
+  position: relative;
+}
+
+#customHeader {
+  padding: 1.5em;
+  color: black;
+}
+
+  #customHeader h1 {
+    font-weight: normal;
+    font-size: 3em;
+    font-family: lexia, sans-serif;
+    margin-left: 200px;
+  }
+
+  #customHeader .customElement {
+    position: absolute;
+    right: 10px;
+    bottom: -1em;
+  }
+
+  #customHeader .customImage img {
+    position: absolute;
+    top: -.7em;
+    left: -110px;
+    height: auto;
+  }
+
+.customImage {
+  margin-bottom: 10px;
+}
+
+#customFooter {
+  position: relative;
+  overflow: hidden;
+  bottom: 0;
+  color: black;
+  font-size: 1.4em;
+  padding: 1em 0 1.5em;
+  width: 98%;
+  font-size: 14px;
+  border-top: solid 1px #b3b3b3;
+  /*margin: 0 10px !important;*/
+  margin: 2em 10px 0 10px;
+}
+
+  .pages.terms-page #customFooter {
+    width: unset !important;
+    margin: 0 10px !important;
+  }
+
+  #customFooter p {
+    padding-left: 50px;
+    margin-bottom: 10px;
+  }
+
+.sidebar {
+  background-color: white;
+  border: none;
+  margin-top: 55px;
+  width: 267px;
+  position: absolute;
+  right: 10px;
+  top: 100px;
+}
+
+  .sidebar > img.center {
+    display: block;
+    margin: 0 auto;
+  }
+
+.pageTitle {
+  display: none;
+}
+
+.email_error {
+  clear: both !important;
+}
+
+.boxtitle > span.required {
+  display: none;
+}
+
+.contentFooterWithoutSidebar {
+  color: black;
+  text-align: left;
+  font-family: proxima-nova, sans-serif;
+  font-size: 10px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #b3b3b3;
+  padding: 15px 0 15px 15px 15px;
+}
+
+.section {
+  display: block;
+  width: 80%;
+}
+
+.create_new_login {
+  text-align: center;
+}
+
+.container_incommon {
+  margin-bottom: unset !important;
+}
+
+.container_incommon_top {
+  margin-top: unset !important;
+}
+
+.section_after_submission {
+  width: 80%;
+}
+
+.customElement {
+  font-size: 15px;
+}
+
+.flash_msg {
+  text-align: center;
+  padding: 10px;
+  width: 50%;
+  margin: 10px auto !important;
+  background-color: #DFF0D8;
+  z-index: 100;
+}
+
+  .flash_msg p {
+    margin:0;
+    font-weight: bold;
+    color: #3C763D;
+  }
+
+  .flash_msg .close {
+    color: grey;
+    font-weight: bold;
+    border: none;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left: 250px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+  }
+
+.discovery-service-registry .sidebar {
+  text-align: center;
+  margin-top: unset;
+}
+
+.discovery-service-registry .create_new_login h5, .discovery-service-registry .login_registry_text h5 {
+  font-size: 2rem;
+  text-align: left;
+}
+
+.login-items-desktop .row {
+  margin-bottom: 10px;
+}
+
+.login-items-desktop img, .login-items-mobile img {
+	max-width: 100%;
+}
+
+#idpSelectInput { width: 75% !important; }
+.humanities_commons_idp_enroller_co_petitions.collectIdentifier #tabs-attributes .submitCell input {
+  background: #006650;
+  padding: unset;
+  color: black;
+}
+
+.container {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-family: proxima-nova, sans-serif;
+}
+
+  .container h3 {
+    text-align: center;
+  }
+
+.full-width-container {
+  width: 100%;
+  max-width: 100%;
+  clear: both;
+  margin: 0 auto 100px auto !important;
+}
+
+.column-sidebar {
+	display: none;
+}
+
+.column-content {
+	width: 100%;
+}
+
+.noGutter {
+  margin: 0;
+  padding: 0;
+}
+
+div.IdPSelectPreferredIdPImg {
+  height: unset;
+}
+
+.uni_name {
+  text-align: center !important;
+  margin-top: 20px !important;
+}
+
+.uni-login { display: none !important; }
+/*#idpSelect .IdPSelectautoDispatchArea { display: none !important; }*/
+
+/*.IdPSelectPreferredIdPButton .IdPSelectTextDiv {
+  text-align: center !important;
+  margin-top: 20px !important;
+}*/
+
+#idpSelectPreferredIdPTile {
+  height: unset;
+}
+#idpSelectListButton {
+  padding: 0;
+}
+
+#idpSelectIdPSelector {
+  border: unset;
+}
+
+#idpSelectSelectButton, #idpSelectListButton {
+  width: unset;
+}
+
+/* feature-slim-incommon-3.1
+#idpSelect { 
+  width: 100%; 
+  margin-left: 12px !important;
+}
+#idpSelectIdPSelector { 
+  width: unset !important; 
+  margin-left: 35px !important;
+}
+#idpSelectIdPEntryTile {
+  /*background-color: black;*/
+  color: black;
+  padding: 10px;
+}
+*/
+
+/** controls incommon options in login screen **/
+#idpSelectIdPSelector #idpSelectIdPEntryTile { display: none; }
+#idpSelectIdPSelector .IdPSelectautoDispatchTile { display: none; }
+
+.container_incommon_top .button_container { display:none; }
+.container_incommon_top .linked_login_container { display:none; }
+
+
+#idpSelectIdPSelector #idpSelectInput { 
+  width: 71% !important;
+  height: unset !important; 
+  padding: 15px !important ;
+}
+
+#idpSelectIdPSelector #idpSelectSelectButton {
+  height: unset !important;
+  padding: 5px 20px !important;
+}
+
+.IdPSelectautoDispatchArea {
+margin-top: 0 !important;
+}
+
+.container_incommon_top #idpSelect {
+margin-top: 0 !important;
+}
+
+.titles_container { text-align: center !important; }
+   .titles_container a { color: #006ccc !important; }
+
+.login-items-desktop .one-half {
+  margin: 5px;
+}
+
+.wordpress-container {
+margin-bottom: 0 !important;
+}
+
+.login-items-desktop {
+margin-bottom: 0;
+}
+
+.login-items-desktop a {
+  display: block;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  /*box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 6px, rgba(0, 0, 0, 0.2) 0px 1px 4px;*/
+  border-radius: 4px;
+}
+
+.uni_cred_login { 
+  padding: 20px;
+  color: #006ccc !important;
+  font-weight: normal !important;
+}
+
+  .uni_cred_login:hover { text-decoration: underline !important; }
+
+.login-items-desktop a img {
+  border-radius: 4px;
+}
+
+.login-item {
+  margin-bottom: 20px;  
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+/*.google-login {
+  background-color: #f4c20d;
+}
+
+.twitter-login {
+  background-color: #00aced;
+}
+
+.hc-login {
+  background-color: #006650;
+}*/
+
+#last_login_container {
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.login-items-desktop a:hover {
+  /*box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 6px, rgba(0, 0, 0, 0.3) 0px 1px 4px;*/
+}
+
+.mla-text {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+  .mla-text mark {
+    /*background: rgba(255, 230, 0, 0.5);*/
+    padding: 1px 6px;
+    line-height: 1.7;
+  }
+
+#idpSelectSelectButton, #idpSelectListButton {
+  background-color: #006650 !important;
+  color: white;
+  padding: 0 10px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.118);
+}
+
+#idpSelect {
+  margin-top: 20px !important;
+}
+
+.IdPSelectHelpButton {
+  margin-left: 5px !important;
+  text-align: left !important;
+}
+
+#customHeader {
+   min-height: 80px;
+}
+
+.last_login_text {
+   display: none;
+   text-align: center;
+   margin-bottom: 0;
+}
+
+.IdPSelectPreferredIdPButton {
+
+/*width: unset !important;*/
+  width: 100% !important;
+  border: 2px solid black;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+  height: 70px;
+}
+
+.IdPSelectPreferredIdPImg {
+  max-width: unset;
+  height: 69px;
+}
+
+.IdPSelectIdPImg {
+  display: unset !important;
+  max-width: unset !important;
+  max-height: unset !important;
+  float: unset !important;
+  margin-right: unset !important;
+margin-left: 150px !important;
+ /* margin-left: 280px !important;*/
+}
+
+/*#idpSelectPreferredIdPTile .IdPSelectTextDiv:first-child { display: none; }*/
+.IdPSelectPreferredIdPButton { margin-bottom: 30px !important;  }
+
+.IdPSelectPreferredIdPButton .IdPSelectTextDiv {
+  text-align: left;
+  font-size: 20px !important;
+  margin: -50px 0 15px 16px;
+  height: unset;
+  color: black;
+}
+
+  .IdPSelectPreferredIdPButton .IdPSelectTextDiv:hover { text-decoration: none !important; }
+
+@media only screen and (min-device-width : 320px) and (max-device-width: 480px) {
+
+  #idpSelectIdPSelector { width: 100% !important; }
+  .IdPSelectPreferredIdPButton { width: unset !important; } 
+  .IdPSelectIdPImg { margin: 0 100px !important;  }
+
+  .sidebar { display: none !important; }
+  .container { margin-top: 50px; padding: unset !important; }
+
+  .customImage > img {
+    margin-left: 100px;
+    margin-top: 10px;
+  }
+
+  #customHeader h1 {
+    margin-left: 0 !important;
+    padding-top: 60px !important;
+  }
+
+  .mobile-container {
+    padding: 0 !important;
+  }
+
+  .create_new_login {
+    margin-bottom: 0;
+  }
+
+  .section_after_submission {
+    width: unset;
+    text-align: center;
+  }
+
+  .discovery-service-enrollment .section {
+    width: unset !important;
+  }
+
+  /*.google-logo img { width: 318px; }*/
+
+  #idpSelectIdPSelector { margin-left: unset !important; }
+  #idpSelectInput { width: 65% !important; }
+
+  .login-item {
+    margin-bottom: 10px !important;
+  }
+
+  .login-items-desktop .row {
+    margin-bottom: 0;
+  }
+
+  .login-item {
+    margin-bottom: 10px;
+  }
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+  .google-logo {
+    /*margin-left: 130px !important;*/
+  }
+
+  .login-items-desktop .row div {
+    width: unset;
+  }
+
+  #customFooter { width: 95% !important; }
+
+}
+
+@media only screen and (min-width: 720px) and (max-width: 900px) {
+
+  #customHeader .customImage img {  margin-left: 100px; }
+  #customHeader h1 { margin-left: 250px; }
+ /* .google-logo img { width: 318px; }*/
+
+}
+
+@media (min-width: 768px) {
+
+  #customHeader .customimage img { margin-left: 100px; }
+  #customHeader h1 { margin-left: 220px; }
+  .login-items-desktop { margin-left: 50px; }
+	.column-sidebar { display: block; }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+  .contentFooterWithoutSidebar { width: 685px !important; }
+  #customHeader .customImage img {  margin-left: 100px; }
+  #customHeader h1 { margin-left: 250px; }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .contentFooterWithoutSidebar {
+    width: 900px !important;
+  }
+
+  #customHeader .customImage img {
+    margin-left: 100px;
+  }
+
+  #customHeader h1 {
+    margin-left: 250px;
+  }
+
+}
