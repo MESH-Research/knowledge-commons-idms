@@ -1,8 +1,5 @@
 name: knowledge-commons-idms
 
-env_file:
-  - .env
-
 services:
   comanage:
     type: lando
@@ -31,6 +28,11 @@ services:
         - COMANAGE_REGISTRY_ADMIN_GIVEN_NAME=Admin
         - COMANAGE_REGISTRY_ADMIN_FAMILY_NAME=Local
         - COMANAGE_REGISTRY_ADMIN_USERNAME=admin
+        - COMANAGE_EMAIL_FROM=admin@lndo.site
+        - COMANAGE_EMAIL_HOST=mailhog
+        - COMANAGE_EMAIL_PORT=1025
+        - COMANAGE_EMAIL_USERNAME=
+        - COMANAGE_EMAIL_PASSWORD=
   comanage-db:
     type: mariadb
     creds:
@@ -61,6 +63,11 @@ services:
     overrides:
       environment:
         - SIMPLESAMLPHP_CONFIG_DIR=/app/services/local-sp/config
+  mailhog:
+    type: mailhog
+    portforward: false
+    hogfrom:
+      - comanage
 
 proxy:
   sp_nginx:

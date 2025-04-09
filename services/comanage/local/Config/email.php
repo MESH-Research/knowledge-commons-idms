@@ -5,7 +5,7 @@ class EmailConfig {
 	public function __construct() {
 		$this->default = array(
 			'transport' => 'Smtp',
-			'from' => [getenv('COMANAGE_EMAIL_FROM'), 'Knowledge Commons'],
+			'from' => [getenv('COMANAGE_EMAIL_FROM') =>  'Knowledge Commons'],
 			'host' => getenv('COMANAGE_EMAIL_HOST'),
 			'port' => getenv('COMANAGE_EMAIL_PORT'),
 			'timeout' => 30,
