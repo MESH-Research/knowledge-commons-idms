@@ -20,6 +20,7 @@ services:
         - ./services/comanage/local:/srv/comanage-registry/local
         - ./services/comanage/plugins:/srv/comanage-registry/plugins
         - ./services/comanage/cache:/var/cache/registry
+        - ./services/comanage/web:/srv/comanage-registry/app/webroot/web
       environment:
         - COMANAGE_DB_HOST=comanage-db
         - COMANAGE_DB_USER=registry

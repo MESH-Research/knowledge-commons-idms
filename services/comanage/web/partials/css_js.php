@@ -1,11 +1,11 @@
 <meta name="viewport" content="width=device-width" />
-<link rel="stylesheet" type="text/css" href="/css/normalize.css?v101617" />
-<link rel="stylesheet" type="text/css" href="/css/skeleton.css?v101617" />
-<link rel="stylesheet" type="text/css" href="/css/discovery_service_01.css?v101617" />
-<link rel="stylesheet" type="text/css" href="/lib/shibboleth-embedded-ds-1.2.0/idpselect.css?v101617" />
+<link rel="stylesheet" type="text/css" href="/web/css/normalize.css?v101617" />
+<link rel="stylesheet" type="text/css" href="/web/css/skeleton.css?v101617" />
+<link rel="stylesheet" type="text/css" href="/web/css/discovery_service_01.css?v101617" />
+<link rel="stylesheet" type="text/css" href="/web/lib/shibboleth-embedded-ds-1.2.0/idpselect.css?v101617" />
 <?php include('analytics.php'); ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="/lib/js-cookie/src/js.cookie.js?v101617"></script>
+<script src="/web/lib/js-cookie/src/js.cookie.js?v101617"></script>
 <?php
   $url = parse_url( $_SERVER['REQUEST_URI'] );
   $path = pathinfo( $url['path'] );
@@ -14,7 +14,7 @@
 <script type="text/javascript" src="jquery.countdown360.js?v101617" charset="utf-8"></script>
 <?php endif; ?>
 <!--<link rel='stylesheet' type='text/css' href="http://registry-dev.commons.mla.org/registry/css/comanage.css?v101617" />-->
-<link rel="stylesheet" type="text/css" media="screen" href="/css/global.css?v101617" />
+<link rel="stylesheet" type="text/css" media="screen" href="/web/css/global.css?v101617" />
 
 <script type='text/javascript' src='//use.typekit.net/bgx6tpq.js'></script>
 <script type='text/javascript'>

@@ -12,4 +12,7 @@ RUN chown www-data:www-data /etc/apache2/envvars
 COPY ./docker-build/basic-auth /etc/apache2/basic-auth
 RUN chown www-data:www-data /etc/apache2/basic-auth
 
+COPY ./web/ /srv/comanage-registry/app/webroot/web/
+RUN chown -R www-data:www-data /srv/comanage-registry/app/webroot/web
+
 EXPOSE 443

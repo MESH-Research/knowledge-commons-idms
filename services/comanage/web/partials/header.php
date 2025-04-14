@@ -70,23 +70,23 @@
       case "mla" :
     ?>
     <h1><?php echo strtoupper( $host[0] ); ?> Login</h1>
-    <div class="customImage"><img src="/img/hc_mla_55.png" /></div>
+    <div class="customImage"><img src="/web/img/hc_mla_55.png" /></div>
     <?php
       break;
       case "ajs" :
     ?>
     <h1><?php echo strtoupper( $host[0] ); ?> Login</h1>
-    <div class="customImage"><img src="/img/hc_ajs_55.png" /></div>
+    <div class="customImage"><img src="/web/img/hc_ajs_55.png" /></div>
     <?php break;
       case "aseees" :
     ?>
     <h1><?php echo strtoupper( $host[0] ); ?> Login</h1>
-    <div class="customImage"><img src="/img/hc_aseees_55.png" /></div>
+    <div class="customImage"><img src="/web/img/hc_aseees_55.png" /></div>
     <?php
       break;
       default :
     ?>
-    <div class="customImage"><img src="/img/kc_logo_wordmark_192.png" /></div>
+    <div class="customImage"><img src="/web/img/kc_logo_wordmark_192.png" /></div>
     <?php
       break;
     endswitch;
@@ -95,7 +95,7 @@
     ?>
     <!-- example markup for your header field -->
     <h1>Membership</h1>
-    <div class="customImage"><img src="/img/kc_logo_wordmark_192.png" /></div>
+    <div class="customImage"><img src="/web/img/kc_logo_wordmark_192.png" /></div>
     <?php endif; ?>
 </header> <!-- /#customHeader -->
 
