@@ -219,3 +219,5 @@ comanage-registry/
 
 security.salt
 security.seed
+
+.vscode/

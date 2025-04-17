@@ -1,5 +1,8 @@
 name: knowledge-commons-idms
 
+env_file:
+  - ./shared.env
+
 services:
   comanage:
     type: lando
