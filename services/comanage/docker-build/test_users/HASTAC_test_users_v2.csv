@@ -1,0 +1,4 @@
+SORID,Name.honorific.official,Name.given.official,Name.middle.official,Name.family.official,Name.suffix.official,EmailAddress.mail.official,OrgIdentity.affiliation,OrgIdentity.login.wpid,OrgIdentity.title,OrgIdentity.o,OrgIdentity.valid_from,OrgIdentity.valid_through
+10001,,Joe,,Test,,hctester0@gmail.com,member,hctester0,Professor of French,University of Illinois,,
+10006,,Meghan,,Test,,hctester60@gmail.com,member,hctester60,"Graduate Student, Digital Humanities",University of Phoenix,2020-01-01,2020-12-31
+10010,,Rosie,,Test,,hctester100@gmail.com,member,hctester100,Professor of Art History,University College London,,

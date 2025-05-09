@@ -1,0 +1,6 @@
+SORID,Name.honorific.official,Name.given.official,Name.middle.official,Name.family.official,Name.suffix.official,EmailAddress.mail.official,OrgIdentity.affiliation,OrgIdentity+login.wpid,OrgIdentity.title,OrgIdentity.o,OrgIdentity.valid_from,OrgIdentity.valid_through
+10004,,Ferdinand,,Test,,hctester40@gmail.com,member,hctester40,Professor of Philosophy,Yale University,,
+10005,,Dave,,Test,,hctester50@gmail.com,member,hctester50,Associate Professor of Spanish,University of Delaware,,
+10007,,Walter,,Test,,hctester70@gmail.com,member,hctester70,Assistant Professor of Eastern European Art,Simon Fraser University,2021-01-01,2021-12-31
+10008,,Kelly,,Test,,hctester80@gmail.com,member,hctester80,"Graduate Student, Media Studies",University of Toronto,2020-01-01,2020-12-31
+10009,,Mike,,Test,,hcmiketester@gmail.com,member,mtest,"Awesome person",MSU,,

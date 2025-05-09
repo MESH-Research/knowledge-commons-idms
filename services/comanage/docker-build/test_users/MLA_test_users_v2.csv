@@ -1,0 +1,8 @@
+SORID,Name.honorific.official,Name.given.official,Name.middle.official,Name.family.official,Name.suffix.official,EmailAddress.mail.official,OrgIdentity.affiliation,OrgIdentity+login.wpid,OrgIdentity.title,OrgIdentity.o,OrgIdentity.valid_from,OrgIdentity.valid_through,AdHocAttribute.group
+10001,,Joe,,Test,,hctester0@gmail.com,member,hctester0,Professor of French,University of Illinois,2020-01-01,2023-12-31,M073,D018,D020,D080,D014,D048
+10002,,Barty,,Test,,hctester10@gmail.com,member,hctester10,"Graduate Student, Russian Literature",University of Iowa,,2020-12-31,M026,M005
+10004,,Ferdinand,,Test,,hctester40@gmail.com,member,hctester40,Professor of Philosophy,Yale University,,2030-12-31,M037
+10005,,Dave,,Test,,hctester50@gmail.com,member,hctester50,Associate Professor of Spanish,University of Delaware,,,M007
+10008,,Kelly,,Test,,hctester80@gmail.com,member,hctester80,"Graduate Student, Media Studies",University of Toronto,,,M008
+10009,,Diana,,Test,,hctester90@gmail.com,member,hctester90,Associate Professor of Comparative Literature,University of California—Berkeley,,,M033
+10010,,Ghost,,Mla,,gihctester@gmail.com,member,gihctester,,,,,,M073,D018,D020,D080,D014,D048

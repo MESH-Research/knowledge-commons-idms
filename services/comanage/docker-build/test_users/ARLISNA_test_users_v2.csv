@@ -1,0 +1,5 @@
+SORID,Name.honorific.official,Name.given.official,Name.middle.official,Name.family.official,Name.suffix.official,EmailAddress.mail.official,OrgIdentity.affiliation,OrgIdentity+login.wpid,OrgIdentity.title,OrgIdentity.o,OrgIdentity.valid_from,OrgIdentity.valid_through,AdHocAttribute.group
+10002,,Barty,,Test,,hctester10@gmail.com,member,hctester10,"Graduate Student, Russian Literature",University of Iowa,,,ARLISNA_ARLISNA Test Group
+10005,,Dave,,Test,,hctester50@gmail.com,member,hctester50,Associate Professor of Spanish,University of Delaware,2020-06-30,2021-06-30,ARLISNA_ARLISNA Test Group
+10010,,Rosie,,Test,,hctester100@gmail.com,member,hctester100,Professor of Art History,University College London,,,ARLISNA_ARLISNA Test Group
+10011,,Mike,,Test,,hcmiketester@gmail.com,member,mtest,Awesome Person,,,,ARLISNA_ARLISNA Test Group

@@ -1,0 +1,5 @@
+SORID,Name.honorific.official,Name.given.official,Name.middle.official,Name.family.official,Name.suffix.official,EmailAddress.mail.official,OrgIdentity.affiliation,OrgIdentity+login.wpid,OrgIdentity.title,OrgIdentity.o,OrgIdentity.valid_from,OrgIdentity.valid_through,AdHocAttribute.group
+10008,,Kelly,,Test,,hctester80@gmail.com,member,hctester80,"Graduate Student, Media Studies",University of Toronto,2020-01-01,2021-01-01,UP_Advocacy Committee
+10001,,Joe,,Test,,hctester0@gmail.com,member,hctester0,Professor of French,University of Illinois,,,UP_Acquisitions Editorial Committee
+10004,,Ferdinand,,Test,,hctester40@gmail.com,member,hctester40,Professor of Philosophy,Yale University,,,UP_Journals Committee
+10002,,Rand,,Test,,hctester20@gmail.com,member,hctester20,,,,,
