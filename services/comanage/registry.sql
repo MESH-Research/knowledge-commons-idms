@@ -249,7 +249,7 @@ CREATE TABLE `cm_authentication_events` (
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `cm_authentication_events_i1` (`authenticated_identifier`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -258,7 +258,7 @@ CREATE TABLE `cm_authentication_events` (
 
 LOCK TABLES `cm_authentication_events` WRITE;
 /*!40000 ALTER TABLE `cm_authentication_events` DISABLE KEYS */;
-INSERT INTO `cm_authentication_events` VALUES (1,'admin','IN','172.20.0.2','2025-03-27 15:01:58','2025-03-27 15:01:58');
+INSERT INTO `cm_authentication_events` VALUES (1,'admin','IN','172.20.0.2','2025-03-27 15:01:58','2025-03-27 15:01:58'),(2,'admin','IN','172.20.0.2','2025-05-09 17:04:24','2025-05-09 17:04:24');
 /*!40000 ALTER TABLE `cm_authentication_events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -325,6 +325,37 @@ CREATE TABLE `cm_authenticators` (
 LOCK TABLES `cm_authenticators` WRITE;
 /*!40000 ALTER TABLE `cm_authenticators` DISABLE KEYS */;
 /*!40000 ALTER TABLE `cm_authenticators` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cm_civicrm_sources`
+--
+
+DROP TABLE IF EXISTS `cm_civicrm_sources`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cm_civicrm_sources` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `org_identity_source_id` int(11) DEFAULT NULL,
+  `apiroot` varchar(256) DEFAULT NULL,
+  `sitekey` varchar(128) DEFAULT NULL,
+  `userkey` varchar(128) DEFAULT NULL,
+  `eppnsuffix` varchar(128) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `cm_civicrm_sources_i1` (`org_identity_source_id`),
+  CONSTRAINT `cm_civicrm_sources_org_identity_source_id_fk` FOREIGN KEY (`org_identity_source_id`) REFERENCES `cm_org_identity_sources` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cm_civicrm_sources`
+--
+
+LOCK TABLES `cm_civicrm_sources` WRITE;
+/*!40000 ALTER TABLE `cm_civicrm_sources` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cm_civicrm_sources` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -431,7 +462,7 @@ CREATE TABLE `cm_cmp_enrollment_configurations` (
 
 LOCK TABLES `cm_cmp_enrollment_configurations` WRITE;
 /*!40000 ALTER TABLE `cm_cmp_enrollment_configurations` DISABLE KEYS */;
-INSERT INTO `cm_cmp_enrollment_configurations` VALUES (1,'CMP Enrollment Configuration',0,0,0,1,1,0,NULL,NULL,NULL,NULL,'/','A','2025-03-27 15:01:41','2025-03-27 15:01:58');
+INSERT INTO `cm_cmp_enrollment_configurations` VALUES (1,'CMP Enrollment Configuration',0,0,0,1,1,0,NULL,NULL,NULL,NULL,'/','A','2025-03-27 15:01:41','2025-05-09 17:04:24');
 /*!40000 ALTER TABLE `cm_cmp_enrollment_configurations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1516,7 +1547,7 @@ CREATE TABLE `cm_co_groups` (
   CONSTRAINT `cm_co_groups_co_group_id_fk` FOREIGN KEY (`co_group_id`) REFERENCES `cm_co_groups` (`id`),
   CONSTRAINT `cm_co_groups_co_id_fk` FOREIGN KEY (`co_id`) REFERENCES `cm_cos` (`id`),
   CONSTRAINT `cm_co_groups_cou_id_fk` FOREIGN KEY (`cou_id`) REFERENCES `cm_cous` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1525,7 +1556,7 @@ CREATE TABLE `cm_co_groups` (
 
 LOCK TABLES `cm_co_groups` WRITE;
 /*!40000 ALTER TABLE `cm_co_groups` DISABLE KEYS */;
-INSERT INTO `cm_co_groups` VALUES (1,1,NULL,'CO:admins','COmanage Administrators',0,'A','A',0,NULL,'2025-03-27 15:01:41','2025-03-27 15:01:41',NULL,0,0,'Shell user \"root\"'),(2,1,NULL,'CO:approvers','COmanage Approvers',0,'A','AP',0,NULL,'2025-03-27 15:01:41','2025-03-27 15:01:41',NULL,0,0,'Shell user \"root\"'),(3,1,NULL,'CO:members:active','COmanage Active Members',0,'A','MA',1,NULL,'2025-03-27 15:01:41','2025-03-27 15:01:41',NULL,0,0,'Shell user \"root\"'),(4,1,NULL,'CO:members:all','COmanage Members',0,'A','M',1,NULL,'2025-03-27 15:01:41','2025-03-27 15:01:41',NULL,0,0,'Shell user \"root\"');
+INSERT INTO `cm_co_groups` VALUES (1,1,NULL,'CO:admins','COmanage Administrators',0,'A','A',0,NULL,'2025-03-27 15:01:41','2025-03-27 15:01:41',NULL,0,0,'Shell user \"root\"'),(2,1,NULL,'CO:approvers','COmanage Approvers',0,'A','AP',0,NULL,'2025-03-27 15:01:41','2025-03-27 15:01:41',NULL,0,0,'Shell user \"root\"'),(3,1,NULL,'CO:members:active','COmanage Active Members',0,'A','MA',1,NULL,'2025-03-27 15:01:41','2025-03-27 15:01:41',NULL,0,0,'Shell user \"root\"'),(4,1,NULL,'CO:members:all','COmanage Members',0,'A','M',1,NULL,'2025-03-27 15:01:41','2025-03-27 15:01:41',NULL,0,0,'Shell user \"root\"'),(5,1,1,'CO:COU:Knowledge Commons:admins','Knowledge Commons Administrators',0,'A','A',0,NULL,'2025-05-09 17:05:29','2025-05-09 17:05:29',NULL,0,0,'admin'),(6,1,1,'CO:COU:Knowledge Commons:approvers','Knowledge Commons Approvers',0,'A','AP',0,NULL,'2025-05-09 17:05:29','2025-05-09 17:05:29',NULL,0,0,'admin'),(7,1,1,'CO:COU:Knowledge Commons:members:active','Knowledge Commons Active Members',0,'A','MA',1,NULL,'2025-05-09 17:05:29','2025-05-09 17:05:29',NULL,0,0,'admin'),(8,1,1,'CO:COU:Knowledge Commons:members:all','Knowledge Commons Members',0,'A','M',1,NULL,'2025-05-09 17:05:29','2025-05-09 17:05:29',NULL,0,0,'admin');
 /*!40000 ALTER TABLE `cm_co_groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2801,7 +2832,7 @@ CREATE TABLE `cm_co_settings` (
   CONSTRAINT `cm_co_settings_co_id_fk` FOREIGN KEY (`co_id`) REFERENCES `cm_cos` (`id`),
   CONSTRAINT `cm_co_settings_co_theme_id_fk` FOREIGN KEY (`co_theme_id`) REFERENCES `cm_co_themes` (`id`),
   CONSTRAINT `cm_co_settings_default_co_pipeline_id_fk` FOREIGN KEY (`default_co_pipeline_id`) REFERENCES `cm_co_pipelines` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2810,6 +2841,7 @@ CREATE TABLE `cm_co_settings` (
 
 LOCK TABLES `cm_co_settings` WRITE;
 /*!40000 ALTER TABLE `cm_co_settings` DISABLE KEYS */;
+INSERT INTO `cm_co_settings` VALUES (1,1,0,0,0,0,1440,1440,1,0,1440,'honorific,given,middle,family,suffix','street','given',NULL,NULL,1,'X','A','S',NULL,NULL,NULL,NULL,NULL,500,'2025-05-09 17:04:47','2025-05-09 17:04:47');
 /*!40000 ALTER TABLE `cm_co_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3133,7 +3165,7 @@ CREATE TABLE `cm_cous` (
   CONSTRAINT `cm_cous_co_id_fk` FOREIGN KEY (`co_id`) REFERENCES `cm_cos` (`id`),
   CONSTRAINT `cm_cous_cou_id_fk` FOREIGN KEY (`cou_id`) REFERENCES `cm_cous` (`id`),
   CONSTRAINT `cm_cous_parent_id_fk` FOREIGN KEY (`parent_id`) REFERENCES `cm_cous` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3142,6 +3174,7 @@ CREATE TABLE `cm_cous` (
 
 LOCK TABLES `cm_cous` WRITE;
 /*!40000 ALTER TABLE `cm_cous` DISABLE KEYS */;
+INSERT INTO `cm_cous` VALUES (1,1,'Knowledge Commons','Knowledge Commons','',NULL,1,2,'2025-05-09 17:05:29','2025-05-09 17:05:29',NULL,0,0,'admin');
 /*!40000 ALTER TABLE `cm_cous` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3945,6 +3978,37 @@ LOCK TABLES `cm_meta` WRITE;
 /*!40000 ALTER TABLE `cm_meta` DISABLE KEYS */;
 INSERT INTO `cm_meta` VALUES ('4.4.2');
 /*!40000 ALTER TABLE `cm_meta` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cm_mla_sources`
+--
+
+DROP TABLE IF EXISTS `cm_mla_sources`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cm_mla_sources` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `org_identity_source_id` int(11) DEFAULT NULL,
+  `apiroot` varchar(256) DEFAULT NULL,
+  `apikey` varchar(64) DEFAULT NULL,
+  `apisecret` varchar(128) DEFAULT NULL,
+  `eppnsuffix` varchar(128) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `cm_mla_sources_i1` (`org_identity_source_id`),
+  CONSTRAINT `cm_mla_sources_org_identity_source_id_fk` FOREIGN KEY (`org_identity_source_id`) REFERENCES `cm_org_identity_sources` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cm_mla_sources`
+--
+
+LOCK TABLES `cm_mla_sources` WRITE;
+/*!40000 ALTER TABLE `cm_mla_sources` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cm_mla_sources` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -5036,4 +5100,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-07 16:21:23
+-- Dump completed on 2025-05-09 17:09:57
