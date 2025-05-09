@@ -1,4 +1,4 @@
-SORID,Name.honorific.official,Name.given.official,Name.middle.official,Name.family.official,Name.suffix.official,EmailAddress.mail.official,OrgIdentity.affiliation,OrgIdentity+login.wpid,OrgIdentity.title,OrgIdentity.o,OrgIdentity.valid_from,OrgIdentity.valid_through,AdHocAttribute.group
+SORID,Name.honorific.official,Name.given.official,Name.middle.official,Name.family.official,Name.suffix.official,EmailAddress.mail.official,OrgIdentity.affiliation,Identifier.identifier.wpid,OrgIdentity.title,OrgIdentity.o,OrgIdentity.valid_from,OrgIdentity.valid_through,AdHocAttribute.group
 10001,,Joe,,Test,,hctester0@gmail.com,member,hctester0,Professor of French,University of Illinois,2020-01-01,2023-12-31,M073,D018,D020,D080,D014,D048
 10002,,Barty,,Test,,hctester10@gmail.com,member,hctester10,"Graduate Student, Russian Literature",University of Iowa,,2020-12-31,M026,M005
 10004,,Ferdinand,,Test,,hctester40@gmail.com,member,hctester40,Professor of Philosophy,Yale University,,2030-12-31,M037

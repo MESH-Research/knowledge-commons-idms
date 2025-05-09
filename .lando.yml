@@ -24,6 +24,7 @@ services:
         - ./services/comanage/plugins:/srv/comanage-registry/plugins
         - ./services/comanage/cache:/var/cache/registry
         - ./services/comanage/web:/srv/comanage-registry/app/webroot/web
+        - ./services/comanage/test_users:/srv/comanage-registry/test_users
       environment:
         - COMANAGE_DB_HOST=comanage-db
         - COMANAGE_DB_USER=registry
